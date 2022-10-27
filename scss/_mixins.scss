@@ -1,0 +1,130 @@
+@use 'vars' as v;
+
+@mixin desktop-view($Width, $f-s){
+    @media (min-width: 1300px){
+        width: $Width;
+        font-size: $f-s;                    
+        margin-left: auto;
+        margin-right: auto;                    
+    }
+};
+
+@mixin img-desktop-view($Width){
+    @media (min-width: 1300px){
+        width: $Width;           
+
+        .h {
+            background: url(../images/bg-header-desktop.png) no-repeat;
+        }
+
+        .q {
+            display: grid;
+            grid-template-columns: 1fr 1fr;          
+            gap: 110px;                      
+
+            &__image {
+               display: block;
+               margin-left: -59px;
+            }      
+            
+            &__info {               
+                width: 300px;                     
+                margin-top: 50px;                                         
+            }
+
+            &__description {
+                width: 350px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+};
+
+@mixin description-set-up($Weight, $Size, $color){
+    font-weight: $Weight;
+    font-size: $Size;
+    text-align: center;
+    color: $color;
+    line-height: 23px;
+    margin-bottom: 55px;       
+};
+
+@mixin desktop-description-set-up($Weight, $Size){    
+   @media (min-width: 1300px) {  
+    font-weight: $Weight;
+    font-size: $Size;  
+    text-align: left;
+    line-height: 30px;    
+   }    
+};
+
+@mixin button ($bg-color, $bxshd-color) {
+    width: 310px;
+    height: 55px;
+    font: 400 1em v.$Body-font;
+    background-color: $bg-color;    
+    border: none;
+    outline: none;
+    border-radius: 50px;       
+    box-shadow: 3px 6px 6px 6px $bxshd-color;
+    margin-bottom: 25px;    
+    color: v.$White;       
+    
+}
+
+@mixin flex-elements-desktop-view($Width){
+    @media (min-width: 1300px){
+        width: $Width;
+        margin: 0 auto;        
+        display: flex;      
+        justify-content: space-around;   
+        gap: 30px;
+        margin-bottom: 90px; 
+
+        .f {
+            height: -50vh;
+        }
+        
+        .f__container__li {
+            margin-top: -55px;
+        }
+    }
+};
+
+@mixin hover {
+    cursor: pointer;
+}
+
+@mixin top($margin-top) {
+    @media (min-width: 1300px){
+       margin-top: $margin-top;
+       margin-left: 0;       
+    }
+}
+
+@mixin footer-set {
+    @media (min-width: 1300px){
+        text-align: left;         
+    }
+}
+
+@mixin columns {
+    @media (min-width: 1300px){
+        .s__description{
+            width: 370px;
+        }
+    }
+}
+
+@mixin backdrop{
+    @media (min-width: 1300px){
+        .f {
+            padding-bottom: -80px;
+        }
+        .f__left-container {
+          height: 30px;
+          margin-top: 60px;
+          margin-bottom: 60px;
+        }
+    }    
+}
